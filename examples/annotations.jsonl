@@ -1,0 +1,6 @@
+{"item_id":"task-001","annotator_id":"ann-a","scores":{"correctness":5,"security":4,"no_hallucination":5,"clarity":4},"notes":"Handles the empty-input case."}
+{"item_id":"task-001","annotator_id":"ann-b","scores":{"correctness":4,"security":4,"no_hallucination":5,"clarity":4}}
+{"item_id":"task-002","annotator_id":"ann-a","scores":{"correctness":2,"security":1,"no_hallucination":3,"clarity":3},"notes":"String-concatenated SQL."}
+{"item_id":"task-002","annotator_id":"ann-b","scores":{"correctness":2,"security":1,"no_hallucination":2,"clarity":3},"notes":"Also invents pandas.read_sql_safe()."}
+{"item_id":"task-003","annotator_id":"ann-a","scores":{"correctness":4,"security":5,"no_hallucination":4,"clarity":5}}
+{"item_id":"task-003","annotator_id":"ann-b","scores":{"correctness":5,"security":5,"no_hallucination":4,"clarity":5}}

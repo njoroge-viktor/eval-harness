@@ -1,0 +1,6 @@
+{"item_id":"prompt-001","annotator_id":"ann-a","response_a":"gpt-4o","response_b":"claude-3-5-sonnet","verdict":"b","rationale":"B handles the concurrency edge case."}
+{"item_id":"prompt-002","annotator_id":"ann-a","response_a":"gpt-4o","response_b":"llama-3-70b","verdict":"a","rationale":"B hallucinates asyncio.gather_all()."}
+{"item_id":"prompt-003","annotator_id":"ann-b","response_a":"claude-3-5-sonnet","response_b":"llama-3-70b","verdict":"a"}
+{"item_id":"prompt-004","annotator_id":"ann-b","response_a":"gpt-4o","response_b":"claude-3-5-sonnet","verdict":"tie","rationale":"Both correct, equally clear."}
+{"item_id":"prompt-005","annotator_id":"ann-a","response_a":"claude-3-5-sonnet","response_b":"llama-3-70b","verdict":"a"}
+{"item_id":"prompt-006","annotator_id":"ann-b","response_a":"gpt-4o","response_b":"llama-3-70b","verdict":"a"}

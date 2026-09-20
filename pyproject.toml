@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eval-harness"
+version = "0.1.0"
+description = "Rubric scoring, inter-annotator agreement and preference ranking for LLM evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Victor Njoroge", email = "victornjoroge174@gmail.com" }]
+keywords = ["llm", "evaluation", "rlhf", "annotation", "inter-annotator-agreement"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Typing :: Typed",
+]
+# No runtime dependencies, by design: this drops into an annotation pipeline
+# without pulling in a dependency tree.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "mypy>=1.8", "ruff>=0.6"]
+
+[project.scripts]
+eval-harness = "eval_harness.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/njoroge-viktor/eval-harness"
+Issues = "https://github.com/njoroge-viktor/eval-harness/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/eval_harness"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+source = ["src/eval_harness"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:"]
+fail_under = 90
+show_missing = true
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src", "tests"]
+warn_unreachable = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+line-length = 90
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "RET", "ARG", "PTH", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG001"]

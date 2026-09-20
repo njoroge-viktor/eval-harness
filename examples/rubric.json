@@ -1,0 +1,29 @@
+{
+  "name": "code-response-quality",
+  "criteria": [
+    {
+      "name": "correctness",
+      "weight": 3.0,
+      "scale": [1, 5],
+      "description": "Does the code do what was asked, including edge cases?"
+    },
+    {
+      "name": "security",
+      "weight": 2.5,
+      "scale": [1, 5],
+      "description": "Injection, authz, secret handling and unsafe deserialisation."
+    },
+    {
+      "name": "no_hallucination",
+      "weight": 2.0,
+      "scale": [1, 5],
+      "description": "Every API, method and library referenced actually exists."
+    },
+    {
+      "name": "clarity",
+      "weight": 1.0,
+      "scale": [1, 5],
+      "description": "Naming, structure and comments a reviewer can follow."
+    }
+  ]
+}
